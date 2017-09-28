@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mortgage Calculator</title>
+	</head>
+	<body>
+		<script>
+			function createTable() {
+
+				var principal = document.getElementById("principal").value;
+				var apr = document.getElementById("apr").value;
+				var paymentAmount = parseInt(document.getElementById("payment-amount").value);
+			
+
+				var endingBalance = 0;
+				while(principal > 0) {
+					var monthlyInterest = principal* ( (apr / 12) / 100);
+					principal = principal - paymentAmount + monthlyInterest;
+
+					if((principal) < 0) {
+						principal = 0;
+						paymentAmount = principal + monthlyInterest;
+						endingBalance = 0
+					}
+					else {
+						endingBalance = principal + monthlyInterest - paymentAmount;
+					}
+					printColumns(principal, monthlyInterest, paymentAmount, endingBalance);
+				}
+				var table = document.getElementById("data-table");
+				var tr = document.createElement("tr");
+				var td = document.createElement("td");
+				var data = document.createTextNode("sometext");
+				td.appendChild(data);
+				tr.appendChild(td);
+				table.appendChild(tr);	
+			}
+			function printColumns(principal, monthlyInterest, paymentAmount, endingBalance) {
+				console.log("starting, interest ammout, payment, ending balance")
+				console.log(principal, monthlyInterest, paymentAmount, endingBalance);
+			}
+		
+		</script>
+		<table border='0'>
+			<tr>
+				<td>Principal:</td><td><input type='text' id="principal"></td>
+			</tr>
+			<tr>
+				<td>Annual Interest:</td><td><input type='text' id="apr"></td>
+			</tr>
+			<tr>
+				<td>Payment Amount:</td><td><input type='text' id="payment-amount"></td>
+			</tr>
+			<tr>
+				<td></td><td><input type='button' value='Compute Mortgage' onclick="createTable()"></td>
+			</tr>
+		</table>
+		<table border='1' id="data-table">
+			<tr>
+				<th>Starting Principal</th>
+				<th>Interest Amount</th>
+				<th>Payment</th>
+				<th>Ending Balance</th>
+			</tr>
+			<tr id="tr-td">
+				<td>10</td>
+				<td>20</td>
+				<td>30</td>
+				<td>40</td>
+			</tr>
+            
+		</table>
+	
+	</body>
+</html>

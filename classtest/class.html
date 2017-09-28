@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Age: <input type="text" id="txtAge"><br>
+
+    <input type="button" id="btnHitMe" value="hitme">
+
+    <script>
+        
+        function alertAge(event) {
+            var age = document.getElementById("txtAge");
+                console.log("age is "+ age.value);
+                
+            
+        }
+
+        var but = document.getElementById("btnHitMe");
+        
+        but.onclick = alertAge;
+    </script>
+</body>
+</html>
