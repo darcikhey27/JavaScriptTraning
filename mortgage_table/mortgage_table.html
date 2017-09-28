@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Mortgage Calculator</title>
+		<link rel="stylesheet" href="styles.css" type="txt/css">
 	</head>
 	<body>
 		<script>
@@ -11,7 +12,6 @@
 				var apr = document.getElementById("apr").value;
 				var paymentAmount = parseInt(document.getElementById("payment-amount").value);
 			
-
 				var endingBalance = 0;
 				var counter = 0;
 				while(principal > 0) {
@@ -41,6 +41,7 @@
 				h2.appendChild(document.createTextNode(counter));
 				console.log(counter);
 			}
+
 			function appenedCells(principal, monthlyInterest, paymentAmount, endingBalance) {
 				var table = document.getElementById("data-table");
 				var tr = document.createElement("tr");
@@ -68,13 +69,17 @@
 				
 				table.appendChild(tr);
 			}
+
 			function printColumns(principal, monthlyInterest, paymentAmount, endingBalance) {
 				console.log("starting, interest ammout, payment, ending balance")
 				console.log(principal, monthlyInterest, paymentAmount, endingBalance);
 			}
 		
 		</script>
-		<table border='0'>
+
+
+<div class="container">
+	<table border='0'>
 			<tr>
 				<td>Principal:</td><td><input type='text' id="principal"></td>
 			</tr>
@@ -97,8 +102,11 @@
 			</tr>
 			
             
-		</table>
+	</table>
 		<p id="p"></p>
+
+</div>
+		
 	
 	</body>
 </html>
