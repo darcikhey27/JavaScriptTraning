@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Mortgage Calculator</title>
+	</head>
+	<body>
+		<table name='data' border='0'>
+			<tr>
+				<td>Principal:</td><td><input id='principal' type='text'></td>
+			</tr>
+			<tr>
+				<td>Annual Interest:</td><td><input id='interest' type='text'></td>
+			</tr>
+			<tr>
+				<td>Payment Amount:</td><td><input id='amount' type='text'></td>
+			</tr>
+			<tr>
+				<td></td><td><input type='button' onclick="calc();"value='Compute Mortgage'></td>
+			</tr>
+		<table id="table" border='1'>
+			<tr id="tableRow">
+				<th>Starting Principal</th>
+				<th>Interest Amount</th>
+				<th>Payment</th>
+				<th>Ending Balance</th>
+			</tr>
+        </table>
+        
+        <script type="text/javascript">
+            function calc() {
+                var monthlyInterest = 0;
+                var endBal = 0;
+                var principal = document.getElementById('principal').value;
+                var interest = document.getElementById('interest').value;
+                var amount = document.getElementById('amount').value;
+                
+                monthlyInterest = (principal*((interest/12)/100));
+                
+                while ((principal) > 0) {
+
+                    console.log(monthlyInterest);
+                    console.log(principal);
+                    
+                    if (((principal)-(monthlyInterest)+(interest)) < 0) {
+                        amount = principal + monthlyInterest;
+                        principal = 0;
+                        endBal = 0;
+                        makeTableElements(principal, interest, amount, endBal);
+                        console.log(amount);
+                    }
+                    else {
+                        endBal = (principal+interest-amount);
+                        makeTableElements(principal, interest, amount, endBal);
+                        principal = endBal;
+                    }
+                }
+            }
+            function makeTableElements(principal, interest, amount, endBal) {
+                var newTextP = document.createTextNode(principal.toString());
+                var newTextI = document.createTextNode(interest.toString());
+                var newTextA = document.createTextNode(amount.toString());
+                var newTextE = document.createTextNode(endBal.toString());
+                var newTdP = document.createElement('td');
+                var newTdI = document.createElement('td');
+                var newTdA = document.createElement('td');
+                var newTdE = document.createElement('td');
+                var newTr = document.createElement('tr');
+                var table = document.getElementById('table');
+                
+                newTdP.append(newTextP);
+                newTdI.append(newTextI);
+                newTdA.append(newTextA);
+                newTdE.append(newTextE);
+                newTr.append(newTdP);
+                newTr.append(newTdI);
+                newTr.append(newTdA);
+                newTr.append(newTdE);
+                table.append(newTr);
+                
+            }
+        </script>
+	</body>
+</html>
