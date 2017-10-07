@@ -4,7 +4,7 @@ $(document).ready(function() {
     var left;
     var right;
 
-    $(".defButton").click(function(evt) {
+    $(".numberButton").click(function(evt) {
         var btn = evt.target;
         var btnString = $(btn).html();
         updateLabel(btnString);

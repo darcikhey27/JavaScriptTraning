@@ -12,6 +12,9 @@
     text-align: right;
 }
 
-.btn {
-   
+.numberButton {
+    font-size: 24px;
+    font-weight: bolder;
+    height: 45px;
+    width: 45px;
 }
