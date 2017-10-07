@@ -1,6 +1,10 @@
 $(document).ready(function() {
     
     var register = "";
+    var display = "";
+    var operator = "";
+    var left = "";
+    var right = "";
 
     $(".numberButton").click(function(evt) {
         var btn = evt.target;
@@ -23,6 +27,36 @@ $(document).ready(function() {
         }
     })
 
+    $("#btnSubmitEqual").click(function() {
+        if(this.operator != "") {
+            // do the math
+        }
+    })
+
+    function getLabelString() {
+        var result = $(".display").val();
+        return result;
+    }
+    $(".operator").click(function(evt) {
+        var btn = evt.target;
+        var btnString = $(btn).html();
+       
+        if(btnString == "*") {
+            //multiply
+            this.operator = "*";
+            this.left = this.register;
+            clearLabel();
+        }
+        else if(btnString == "/") {
+            //devide
+        }
+        else if(btnString == "+") {
+            //add
+        }
+        else if(btnString == "-") {
+            //subtract
+        }
+    })
     $("#btnSubmitDecimal").click(function(evt) {
         var existing = $(".display").val();
         if(!existing.includes(".")) {
@@ -32,13 +66,9 @@ $(document).ready(function() {
 
     function updateLabel(newData) {
         var existing = $(".display").val();
-      
         var newString = existing + newData;
          $(".display").val(newString);
-        
-        
-
-
+         this.register = newString;
     }
 
     function clearLabel() {
