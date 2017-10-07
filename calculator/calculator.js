@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    
     var register = "";
     var display = "";
     var operator = "";
@@ -28,7 +27,24 @@ $(document).ready(function() {
             //console.log("button CE right "+ right);
             clearLabel();
         }
+    });
+
+    $("#btnSubmitRecip").click(function() {
+        console.log("recriprical");
+        var str = getLabelString();
+        var num = eval(str);
+        clearLabel()
+        updateLabel(1 / num);
     })
+
+    $("#btnSubmitPercent").click(function() {
+        console.log("percent was clicked");
+        var str = getLabelString();
+        var num = eval(str);
+        clearLabel()
+        updateLabel(num / 100);
+
+    });
 
     $("#btnSubmitSqrt").click(function() {
         console.log("sqrt button was pressed");
@@ -40,10 +56,11 @@ $(document).ready(function() {
             updateLabel(result);
         }
         
-    })
+    });
     $("#btnSubmitEqual").click(function() {
         // do the math
         right = getLabelString();
+        console.log("right is " +right);
         evalute();
         resetValues();
     })
@@ -79,7 +96,6 @@ $(document).ready(function() {
             result = num1 - num2;
         }
         $(".display").val(result);
-        //clear variables here
     }
 
     function resetValues() {
@@ -145,12 +161,10 @@ $(document).ready(function() {
          register = newString;
          //console.log(register);
     }
-
+    
     function clearLabel() {
         $(".display").val("");
     }
-
-    
 });
 
 
