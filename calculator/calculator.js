@@ -22,8 +22,13 @@ $(document).ready(function() {
         }
         else if(btnString == "CE") {
             // clear the register
+            console.log("in CE");
             this.register = $(".display").val();
+            console.log("buton CE left "+ left);
+            console.log("button CE right "+ right);
+
             clearLabel();
+            
         }
     })
 
