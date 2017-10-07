@@ -18,23 +18,50 @@ $(document).ready(function() {
         if(btnString == "C") {
             // clear the screen
             clearLabel();
+            resetValues();
         }
         else if(btnString == "CE") {
             // clear the register
             this.register = $(".display").val();
             clearLabel();
-
         }
     })
 
     $("#btnSubmitEqual").click(function() {
-    
         // do the math
-        this.right = getLabelString();
-        console.log(this.left);
-        console.log("this.right "+ this.right);
+        right = getLabelString();
+        evalute();
+        resetValues();
     })
+   
+    function evalute() {
+        var num1 = eval(left);
+        var num2 = eval(right);
+        var result;
+        if(operator == "*") {
+            result = num1 * num2;
+        }
+        else if(operator == "/") {
+            result = num1 / num2;
+        }
+        else if(operator == "+") {
+            result = num1 + num2;
+        }
+        else {
+            result = num1 - num2;
+        }
+        $(".display").val(result);
+        //clear variables here
+    }
 
+    function resetValues() {
+        console.log("resetting values");
+        register = getLabelString();
+        left = register;
+        console.log(left);
+        right = "";
+        
+    }
     function getLabelString() {
         var result = $(".display").val();
         return result;
@@ -45,19 +72,35 @@ $(document).ready(function() {
        
         if(btnString == "*") {
             //multiply
+            console.log("multiplication");
             operator = "*";
             left = register;
-            console.log("left "+ left);
+            register = "";
             clearLabel();
         }
         else if(btnString == "/") {
             //devide
+            console.log("devide");
+            operator = "/";
+            left = register;
+            register = "";
+            clearLabel();
         }
         else if(btnString == "+") {
             //add
+            console.log("plus");
+            operator = "+";
+            left = register;
+            register = "";
+            clearLabel();
         }
         else if(btnString == "-") {
             //subtract
+            console.log("subtraction");
+            operator = "-";
+            left = register;
+            register = "";
+            clearLabel();
         }
     })
     $("#btnSubmitDecimal").click(function(evt) {
