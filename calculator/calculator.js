@@ -22,23 +22,46 @@ $(document).ready(function() {
         }
         else if(btnString == "CE") {
             // clear the register
-            console.log("in CE");
+            //console.log("in CE");
             this.register = $(".display").val();
-            console.log("buton CE left "+ left);
-            console.log("button CE right "+ right);
-
+            //console.log("buton CE left "+ left);
+            //console.log("button CE right "+ right);
             clearLabel();
-            
         }
     })
 
+    $("#btnSubmitSqrt").click(function() {
+        console.log("sqrt button was pressed");
+        var num = getLabelString();
+        var result;
+        if(num != "") {
+            result = Math.sqrt(num);
+            clearLabel();
+            updateLabel(result);
+        }
+        
+    })
     $("#btnSubmitEqual").click(function() {
         // do the math
         right = getLabelString();
         evalute();
         resetValues();
     })
-   
+
+    $("#btnSubmitUnary").click(function() {
+        var number = getLabelString();
+        if(number != "") {
+            //console.log(number);
+            number = eval(number);
+            number = number * -1;
+            clearLabel();
+            updateLabel(number);
+        }
+        else {
+            updateLabel("-");
+        }
+    })
+
     function evalute() {
         var num1 = eval(left);
         var num2 = eval(right);
@@ -120,12 +143,14 @@ $(document).ready(function() {
         var newString = existing + newData;
          $(".display").val(newString);
          register = newString;
-         console.log(register);
+         //console.log(register);
     }
 
     function clearLabel() {
         $(".display").val("");
     }
+
+    
 });
 
 
