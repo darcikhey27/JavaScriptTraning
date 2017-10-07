@@ -1,8 +1,6 @@
 $(document).ready(function() {
     
-    var outputLabel = "";
-    var left;
-    var right;
+    var register = "";
 
     $(".numberButton").click(function(evt) {
         var btn = evt.target;
@@ -11,15 +9,40 @@ $(document).ready(function() {
     });
 
     $(".clearBtn").click(function(evt) {
-        console.log.evt.target;
+        var btn = evt.target;
+        var btnString = $(btn).html();
+        if(btnString == "C") {
+            // clear the screen
+            clearLabel();
+        }
+        else if(btnString == "CE") {
+            // clear the register
+            this.register = $(".display").val();
+            clearLabel();
+
+        }
+    })
+
+    $("#btnSubmitDecimal").click(function(evt) {
+        var existing = $(".display").val();
+        if(!existing.includes(".")) {
+            updateLabel(".");
+        }
     })
 
     function updateLabel(newData) {
         var existing = $(".display").val();
+      
         var newString = existing + newData;
-        $(".display").val(newString);
+         $(".display").val(newString);
+        
+        
 
 
+    }
+
+    function clearLabel() {
+        $(".display").val("");
     }
 });
 
