@@ -3,3 +3,11 @@
     color: #292f33;
 
 }
+
+.rowOdd {
+    background-image: green;
+}
+
+.rowEven {
+    background-color: gray;
+}

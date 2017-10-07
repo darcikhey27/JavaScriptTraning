@@ -1,0 +1,17 @@
+.defButton {
+    font-size: 24px;
+    font-weight: bolder;
+    height: 45px;
+    width: 45px;
+}
+#readout {
+    font-size: 24px;
+    font-weight: bolder;
+    height: 45px;
+    width: 250px;
+    text-align: right;
+}
+
+.btn {
+   
+}
