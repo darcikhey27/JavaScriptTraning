@@ -28,9 +28,11 @@ $(document).ready(function() {
     })
 
     $("#btnSubmitEqual").click(function() {
-        if(this.operator != "") {
-            // do the math
-        }
+    
+        // do the math
+        this.right = getLabelString();
+        console.log(this.left);
+        console.log("this.right "+ this.right);
     })
 
     function getLabelString() {
@@ -43,8 +45,9 @@ $(document).ready(function() {
        
         if(btnString == "*") {
             //multiply
-            this.operator = "*";
-            this.left = this.register;
+            operator = "*";
+            left = register;
+            console.log("left "+ left);
             clearLabel();
         }
         else if(btnString == "/") {
@@ -68,7 +71,8 @@ $(document).ready(function() {
         var existing = $(".display").val();
         var newString = existing + newData;
          $(".display").val(newString);
-         this.register = newString;
+         register = newString;
+         console.log(register);
     }
 
     function clearLabel() {
