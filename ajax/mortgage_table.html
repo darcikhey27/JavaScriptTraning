@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Mortgage Calculator</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<div class="container header">
+		<h2 class="h2">Darci K Saucedo</h2>
+		<p>Mortgage Calculator</p>
+	</div>
+	<div class="container">
+		<table border='0' class="table">
+			<tr>
+				<td>Principal:</td>
+				<td><input type='text' id="principal" placeholder="23000" value="100000"></td>
+			</tr>
+			<tr>
+				<td>Annual Interest:</td>
+				<td><input type='text' id="apr" placeholder="2.59" value="100000"></td>
+			</tr>
+			<tr>
+				<td>Payment Amount:</td>
+				<td><input type='text' id="payment-amount" placeholder="250"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type='button' value='Compute Mortgage' onclick="createTable()"></td>
+			</tr>
+		</table>
+		<table border='1' id="data-table" class="table">
+			<tr>
+				<th>Starting Principal</th>
+				<th>Interest Amount</th>
+				<th>Payment</th>
+				<th>Ending Balance</th>
+			</tr>
+		</table>
+	</div>
+	<footer>
+		some footer
+	</footer>
+	<script src="js/mortgage.js"></script>
+
+</body>
+
+</html>

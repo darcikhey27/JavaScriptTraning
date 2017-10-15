@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ajax work</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="ajaxAPI.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-light bg-faded" id="mynavbar">
+      <h1 class="navbar-brand mb-0">Darci</h1>
+    </nav>
+
+
+    <div class="container" id="header">
+        <h2 class="h2">Darci Word Translator</h2>
+        <a href="https://placeholder.com"><img src="http://via.placeholder.com/350x150"></a>
+    </div>
+
+    <div class="container"></div>
+    <div class="container" id="textfield">
+      <div class="input-group input-group-lg">
+        <input type="text" class="form-control" id="wordtext"placeholder="word">
+          <span class="input-group-btn"><button class="btn btn-danger" id="mybtn">Enter</button></span>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p>definitions</p>
+            </div>
+            <div class="col-md-6">
+                <p id="definition"></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <p>Synonyms</p>
+            </div>
+            <div class="col-md-6">
+                <p id="synonyms"></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <p>Antonyms:</p>
+            </div>
+            <div class="col-md-6">
+                <p id="antonyms"></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <p>Foreign Translations</p>
+            </div>
+            <div class="col-md-6">
+                <p id="translations"></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <p>Anagrams</p>
+            </div>
+            <div class="col-md-6">
+                <p id="anagrams"></p>
+            </div>
+        </div>
+
+        
+
+
+    </div>
+    
+</body>
+</html>

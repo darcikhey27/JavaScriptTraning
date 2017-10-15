@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>php ajax</title>
+</head>
+<body>
+
+
+    <div id="customer">Customer information</div>
+    <button id="oneButton">read text file</button>
+    <textarea id="myTextArea" name="myTextArea" id="" cols="30" rows="10"></textarea>
+</br>
+    <h2>enter number to send to php server</h2>
+    <form id="theForm">
+        <span>s</span></br>
+        <input type="text" name="data" id="data"></input>
+        <button type="button" id="twoButton">Double number</button>
+
+
+    </form>
+    
+
+
+
+
+    <script type="text/javascript">
+    
+        $("document").ready(function() {
+
+            $("#oneButton").on("click", getInfoFromServer);
+            $("#twoButton").on("click", getDoubleFromServer);
+
+            function getInfoFromServer() {
+                $.ajax({
+                    type: "GET",
+                    url: "textFromServer.txt",
+                    success: postToPage
+                })
+            }
+            function postToPage(data, status) {
+                console.log("data is " + data);
+                console.log("status is "+ status);
+                $("#myTextArea").val(data);
+            } 
+
+            function getDoubleFromServer() {
+                console.log("going to server");
+                $("span").load("response.php", 
+                    $("#theForm").serializeArray());
+            }
+
+
+        });
+    
+    
+    </script>
+
+
+
+</body>
+</html>

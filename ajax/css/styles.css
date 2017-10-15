@@ -1,0 +1,23 @@
+body {
+    background-color: #2C3E50;
+    margin: auto;
+    color: #D7DADB;
+}
+
+#header {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+#textfield {
+    padding-bottom: 20px;
+}
+#textfield button {
+    background-color: #FC4349;
+    color:  #D7DADB;
+}
+
+
+#mynavbar {
+    background-color: #D7DADB;
+}
