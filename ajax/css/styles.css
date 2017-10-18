@@ -8,9 +8,23 @@ body {
     text-align: center;
     padding-top: 50px;
     padding-bottom: 50px;
+    color: white;
+    
+   
+}
+#word {
+    font-size: 3em;
+    font-family: consolas;
+    color: #D7DADB;
+    margin: auto;
+    text-align: center;
+    width: 350px;
+    height: 150px;
+    background-color: #FC4349;
 }
 #textfield {
-    padding-bottom: 20px;
+    padding-bottom: 30px;
+    padding-top: 30px;
 }
 #textfield button {
     background-color: #FC4349;
@@ -21,3 +35,4 @@ body {
 #mynavbar {
     background-color: #D7DADB;
 }
+
